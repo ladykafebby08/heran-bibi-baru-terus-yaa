@@ -7,7 +7,7 @@
         <form method="post">
             <div class="form-group">
                 <label>NIK <span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="nik" value="<?= set_value('nik', kode_oto('nik', 'tb_alternatif', 'A', 3)) ?>" />
+                <input class="form-control" type="text" name="nik" value="<?= set_value('nik') ?>" />
             </div>
             <div class="form-group">
                 <label>Nama Alternatif <span class="text-danger">*</span></label>
