@@ -2,6 +2,8 @@
     <h1>Laporan</h1>
 </div>
 <?php
+$kodeJabatan = $_POST['kodeJabatan'];
+
 $tahun = set_value('tahun');
 $q = esc_field(_get('q'));
 $rows = $db->get_results("SELECT * FROM tb_alternatif WHERE nama_alternatif LIKE '%$q%' AND YEAR(tanggal_survey)='$tahun' ORDER BY rank");
@@ -22,10 +24,24 @@ $rows = $db->get_results("SELECT * FROM tb_alternatif WHERE nama_alternatif LIKE
                 <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
             </div>
             <?php if ($rows) : ?>
-                <div class="form-group">
-                    <a class="btn btn-default" target="_blank" href="cetak.php?m=hitung&tahun=<?= $tahun ?>"><span class="glyphicon glyphicon-print"></span> Cetak</a>
-                </div>
+
             <?php endif ?>
+
+        </form>
+        <hr>
+        <form method="get" action="hitung_cetak.php?m=hitung&tahun=<?= $tahun ?>&kodeJabatan=<?= $kodeJabatan ?>">
+            <div class="form-group">
+                <select class="form-control" name="kodeJabatan">
+                    <option value="">--- Pilih jabatan ---</option>
+                    <option value="1">Kasi</option>
+                    <option value="2">Staf</option>
+                    <option value="3">Kepala Dinas</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-default"><span class="glyphicon glyphicon-print"></span> Cetak</button>
+            </div>
         </form>
     </div>
     <div class="table-responsive">
