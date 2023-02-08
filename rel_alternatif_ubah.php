@@ -37,10 +37,55 @@ $row = $db->get_row("SELECT * FROM tb_alternatif WHERE nik='$_GET[ID]'");
 
                     <div style="display: flex; gap: 35px;">
                         <?php if (isset($KRITERIA_CRISP[$row->kode_kriteria])) : ?>
-                            <!-- tambahkan input dan hapuskan class form-control -->
 
-                            <!-- <input list="<?= $row->ID ?>"> -->
-                            <select class="" name="nilai[<?= $row->ID ?>]" id="<?= $row->ID ?>"><?= get_crisp_option($row->kode_kriteria, $row->kode_crisp) ?></select>
+                            <!-- input khusus jumlah tanggungan -->
+                            <?php if ($row->kode_kriteria === "C04") : ?>
+
+                                <!-- percabangan untuk value jumlah tanggungan -->
+                                <?php
+                                $jmlTanggungan = "0 Orang";
+                                $kode = $row->kode_crisp;
+
+                                if ($kode == 12) {
+                                    $jmlTanggungan = "1 Orang";
+                                } else if ($kode == 13) {
+                                    $jmlTanggungan = "2 Orang";
+                                } else if ($kode == 14) {
+                                    $jmlTanggungan = "3 Orang";
+                                } else if ($kode == 15) {
+                                    $jmlTanggungan = "4 Orang";
+                                } else if ($kode == 16) {
+                                    $jmlTanggungan = "5 Orang";
+                                } else if ($kode == 17) {
+                                    $jmlTanggungan = "6 Orang";
+                                } else if ($kode == 18) {
+                                    $jmlTanggungan = "7 Orang";
+                                } else if ($kode == 19) {
+                                    $jmlTanggungan = "8 Orang";
+                                } else if ($kode == 20) {
+                                    $jmlTanggungan = "9 Orang";
+                                } else if ($kode == 21) {
+                                    $jmlTanggungan = "10 Orang";
+                                } else if ($kode == 22) {
+                                    $jmlTanggungan = "11 Orang";
+                                } else if ($kode == 23) {
+                                    $jmlTanggungan = "12 Orang";
+                                } else if ($kode == 24) {
+                                    $jmlTanggungan = "13 Orang";
+                                } else if ($kode == 25) {
+                                    $jmlTanggungan = "14 Orang";
+                                } else if ($kode == 26) {
+                                    $jmlTanggungan = "15 Orang";
+                                }
+                                ?>
+
+                                <input name="nilai[<?= $row->ID ?>]" class="form-control" list="<?= $row->ID ?>" type="text" value="<?= $jmlTanggungan ?>">
+                                <datalist id="<?= $row->ID ?>"><?= get_crisp_option($row->kode_kriteria, $row->kode_crisp) ?></datalist>
+
+                            <?php else : ?>
+                                <select class="form-control" name="nilai[<?= $row->ID ?>]" id="<?= $row->ID ?>"><?= get_crisp_option($row->kode_kriteria, $row->kode_crisp) ?></select>
+                            <?php endif ?>
+
                         <?php else : ?>
                             <input class="form-control" name="nilai[<?= $row->ID ?>]" value="<?= $row->kode_crisp ?>" />
                         <?php endif ?>
@@ -63,7 +108,7 @@ $row = $db->get_row("SELECT * FROM tb_alternatif WHERE nik='$_GET[ID]'");
 
                         ?>
 
-                        <input type="text" value=<?= $nilai; ?> style="text-align: center;">
+                        <input type="text" value=<?= $nilai ?> style="text-align: center;">
                     </div>
                 </div>
             <?php endforeach ?>

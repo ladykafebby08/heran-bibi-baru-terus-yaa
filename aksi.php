@@ -187,10 +187,13 @@ else if ($mod == 'rel_alternatif_ubah') {
         print_msg("Field bertanda * tidak boleh kosong!");
     else {
         $db->query("UPDATE tb_alternatif SET tanggal_survey='$tanggal_survey' WHERE nik='$_GET[ID]'");
+
         foreach ($_POST['nilai'] as $key => $val) {
             $db->query("UPDATE tb_rel_alternatif SET kode_crisp='$val' WHERE ID='$key'");
         }
-        redirect_js("index.php?m=rel_alternatif");
+
+        // redirect_js("index.php?m=rel_alternatif");
+        header("Refresh:0");
     }
 }
 
