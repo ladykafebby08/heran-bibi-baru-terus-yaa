@@ -1,6 +1,6 @@
-<!-- <?php
-        $data = get_rel_alternatif();
-        ?>
+<?php
+$data = get_rel_alternatif();
+?>
 <h1>Nilai Alternatif</h1>
 
 <table class="table table-bordered table-hover table-striped">
@@ -23,4 +23,4 @@
             <?php endforeach ?>
         </tr>
     <?php endforeach; ?>
-</table> -->
+</table>

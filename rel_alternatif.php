@@ -14,9 +14,9 @@ $data = get_rel_alternatif(esc_field(_get('q')));
             <div class="form-group">
                 <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <a class="btn btn-default" href="cetak.php?m=rel_alternatif" target="_blank"><span class="glyphicon glyphicon-print"></span> Cetak</a>
-            </div>
+            </div> -->
         </form>
     </div>
     <table class="table table-bordered table-hover table-striped">

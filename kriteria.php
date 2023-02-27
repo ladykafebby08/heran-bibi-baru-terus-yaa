@@ -14,9 +14,9 @@
             <div class="form-group">
                 <a class="btn btn-primary" href="?m=kriteria_tambah"><span class="glyphicon glyphicon-plus"></span> Tambah</a>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <a class="btn btn-default" target="_blank" href="cetak.php?m=kriteria"><span class="glyphicon glyphicon-print"></span> Cetak</a>
-            </div>
+            </div> -->
         </form>
     </div>
     <div class="table-responsive">
