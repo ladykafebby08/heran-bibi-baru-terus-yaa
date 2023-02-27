@@ -63,12 +63,13 @@ $row = $db->get_row("SELECT * FROM tb_alternatif WHERE nik='$_GET[ID]'");
                             <input type="text" value=<?= $nilai ?> style="text-align: center;">
                             </div>
                     </div>
-                <?php endforeach ?>
-
-                <div class="form-group">
-                    <button class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Simpan</button>
-                    <a class="btn btn-danger" href="?m=rel_alternatif"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
                 </div>
+            <?php endforeach ?>
+
+            <div class="form-group">
+                <button class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Simpan</button>
+                <a class="btn btn-danger" href="?m=rel_alternatif"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
+            </div>
         </form>
     </div>
 </div>
