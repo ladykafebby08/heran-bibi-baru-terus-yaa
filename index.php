@@ -91,15 +91,15 @@ if (empty($_SESSION['login']))
 
 						<?php if ($_SESSION['level'] == 'pengawas') : ?>
 							<li class="dropdown">
-								<a href="?m=kriteria" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-th-large"></span> AHP <span class="caret"></span></a>
+								<!-- <a href="?m=kriteria" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-th-large"></span> AHP <span class="caret"></span></a> -->
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="?m=kriteria"><span class="glyphicon glyphicon-th-large"></span> Kriteria</a></li>
-									<li><a href="?m=rel_kriteria"><span class="glyphicon glyphicon-th-list"></span> Nilai bobot kriteria</a></li>
+									<!-- <li><a href="?m=kriteria"><span class="glyphicon glyphicon-th-large"></span> Kriteria</a></li>
+									<li><a href="?m=rel_kriteria"><span class="glyphicon glyphicon-th-list"></span> Nilai bobot kriteria</a></li> -->
 									<!-- navigasi crips -->
 									<!-- <li><a href="?m=crisp"><span class="glyphicon glyphicon-th-large"></span> Crisp</a></li> -->
 								</ul>
 							</li>
-							<li><a href="?m=hitung"><span class="glyphicon glyphicon-signal"></span> ELECTRE</a></li>
+							<!-- <li><a href="?m=hitung"><span class="glyphicon glyphicon-signal"></span> ELECTRE</a></li> -->
 							<li><a href="?m=laporan"><span class="glyphicon glyphicon-calendar"></span> Laporan</a></li>
 							<li><a href="?m=password"><span class="glyphicon glyphicon-lock"></span> Password</a></li>
 							<li><a href="aksi.php?act=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
